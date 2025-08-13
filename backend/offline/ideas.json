@@ -1,0 +1,300 @@
+{
+  "ru": [
+    {
+      "title": "Умные часы",
+      "description": "Современные часы с функциями фитнес-трекера и уведомлениями",
+      "why": "Практичный и стильный подарок для активных людей",
+      "price_hint_kzt": "15000-25000",
+      "tags": ["технологии", "здоровье", "стиль"]
+    },
+    {
+      "title": "Книга по интересам",
+      "description": "Интересная книга в жанре, который нравится получателю",
+      "why": "Развивает интеллект и дарит новые знания",
+      "price_hint_kzt": "3000-8000",
+      "tags": ["образование", "развлечения", "развитие"]
+    },
+    {
+      "title": "Набор для хобби",
+      "description": "Комплект инструментов для любимого занятия",
+      "why": "Помогает развивать творческие способности",
+      "price_hint_kzt": "5000-15000",
+      "tags": ["творчество", "хобби", "развитие"]
+    },
+    {
+      "title": "Сертификат в спа",
+      "description": "Подарочный сертификат на расслабляющие процедуры",
+      "why": "Дарит отдых и заботу о себе",
+      "price_hint_kzt": "10000-20000",
+      "tags": ["здоровье", "отдых", "забота"]
+    },
+    {
+      "title": "Кулинарный мастер-класс",
+      "description": "Урок приготовления блюд с профессиональным шефом",
+      "why": "Новый опыт и полезный навык",
+      "price_hint_kzt": "8000-15000",
+      "tags": ["кулинария", "опыт", "навыки"]
+    },
+    {
+      "title": "Спортивный инвентарь",
+      "description": "Качественное оборудование для тренировок",
+      "why": "Поддерживает здоровый образ жизни",
+      "price_hint_kzt": "12000-25000",
+      "tags": ["спорт", "здоровье", "активность"]
+    },
+    {
+      "title": "Музыкальный инструмент",
+      "description": "Красивый инструмент для начинающих музыкантов",
+      "why": "Открывает мир музыки и творчества",
+      "price_hint_kzt": "20000-40000",
+      "tags": ["музыка", "творчество", "развитие"]
+    },
+    {
+      "title": "Путешествие выходного дня",
+      "description": "Организованная поездка в интересное место",
+      "why": "Новые впечатления и воспоминания",
+      "price_hint_kzt": "15000-30000",
+      "tags": ["путешествия", "впечатления", "отдых"]
+    },
+    {
+      "title": "Набор для рисования",
+      "description": "Профессиональные материалы для художников",
+      "why": "Развивает творческие способности",
+      "price_hint_kzt": "8000-18000",
+      "tags": ["творчество", "искусство", "развитие"]
+    },
+    {
+      "title": "Электронная книга",
+      "description": "Удобное устройство для чтения любимых книг",
+      "why": "Практичный подарок для книголюбов",
+      "price_hint_kzt": "25000-40000",
+      "tags": ["технологии", "чтение", "образование"]
+    },
+    {
+      "title": "Набор для йоги",
+      "description": "Коврик и аксессуары для занятий йогой",
+      "why": "Поддерживает физическое и ментальное здоровье",
+      "price_hint_kzt": "5000-12000",
+      "tags": ["здоровье", "спорт", "медитация"]
+    },
+    {
+      "title": "Фотоаппарат",
+      "description": "Качественная камера для любителей фотографии",
+      "why": "Помогает запечатлеть важные моменты",
+      "price_hint_kzt": "30000-60000",
+      "tags": ["фотография", "творчество", "воспоминания"]
+    },
+    {
+      "title": "Набор для садоводства",
+      "description": "Инструменты и семена для выращивания растений",
+      "why": "Приносит радость от выращивания живого",
+      "price_hint_kzt": "3000-8000",
+      "tags": ["природа", "хобби", "растения"]
+    },
+    {
+      "title": "Сертификат на обучение",
+      "description": "Курс по интересующей теме или навыку",
+      "why": "Инвестиция в будущее и развитие",
+      "price_hint_kzt": "20000-50000",
+      "tags": ["образование", "развитие", "навыки"]
+    },
+    {
+      "title": "Набор для рукоделия",
+      "description": "Материалы для вязания, вышивки или других видов рукоделия",
+      "why": "Развивает мелкую моторику и творчество",
+      "price_hint_kzt": "4000-10000",
+      "tags": ["творчество", "рукоделие", "хобби"]
+    },
+    {
+      "title": "Билеты на концерт",
+      "description": "Билеты на выступление любимого исполнителя",
+      "why": "Незабываемые эмоции и впечатления",
+      "price_hint_kzt": "8000-25000",
+      "tags": ["музыка", "развлечения", "впечатления"]
+    },
+    {
+      "title": "Набор для барбекю",
+      "description": "Качественные инструменты для приготовления на гриле",
+      "why": "Помогает создавать вкусные блюда на природе",
+      "price_hint_kzt": "15000-30000",
+      "tags": ["кулинария", "отдых", "природа"]
+    },
+    {
+      "title": "Сертификат в магазин одежды",
+      "description": "Возможность выбрать стильную одежду",
+      "why": "Помогает обновить гардероб",
+      "price_hint_kzt": "10000-25000",
+      "tags": ["стиль", "мода", "внешность"]
+    },
+    {
+      "title": "Набор для рыбалки",
+      "description": "Профессиональные снасти для любителей рыбалки",
+      "why": "Помогает расслабиться на природе",
+      "price_hint_kzt": "12000-25000",
+      "tags": ["спорт", "природа", "отдых"]
+    },
+    {
+      "title": "Электронная доска",
+      "description": "Умная доска для заметок и планирования",
+      "why": "Помогает организовать мысли и задачи",
+      "price_hint_kzt": "35000-60000",
+      "tags": ["технологии", "организация", "продуктивность"]
+    },
+    {
+      "title": "Набор для пикника",
+      "description": "Красивая посуда и аксессуары для отдыха на природе",
+      "why": "Создает уютную атмосферу для отдыха",
+      "price_hint_kzt": "8000-15000",
+      "tags": ["отдых", "природа", "уют"]
+    }
+  ],
+  "en": [
+    {
+      "title": "Smart Watch",
+      "description": "Modern watch with fitness tracking and notification features",
+      "why": "Practical and stylish gift for active people",
+      "price_hint_kzt": "15000-25000",
+      "tags": ["technology", "health", "style"]
+    },
+    {
+      "title": "Interest-based Book",
+      "description": "Interesting book in the genre that the recipient likes",
+      "why": "Develops intellect and provides new knowledge",
+      "price_hint_kzt": "3000-8000",
+      "tags": ["education", "entertainment", "development"]
+    },
+    {
+      "title": "Hobby Kit",
+      "description": "Set of tools for favorite activities",
+      "why": "Helps develop creative abilities",
+      "price_hint_kzt": "5000-15000",
+      "tags": ["creativity", "hobby", "development"]
+    },
+    {
+      "title": "Spa Certificate",
+      "description": "Gift certificate for relaxing treatments",
+      "why": "Provides rest and self-care",
+      "price_hint_kzt": "10000-20000",
+      "tags": ["health", "relaxation", "care"]
+    },
+    {
+      "title": "Cooking Masterclass",
+      "description": "Cooking lesson with a professional chef",
+      "why": "New experience and useful skill",
+      "price_hint_kzt": "8000-15000",
+      "tags": ["cooking", "experience", "skills"]
+    },
+    {
+      "title": "Sports Equipment",
+      "description": "Quality equipment for workouts",
+      "why": "Supports healthy lifestyle",
+      "price_hint_kzt": "12000-25000",
+      "tags": ["sports", "health", "activity"]
+    },
+    {
+      "title": "Musical Instrument",
+      "description": "Beautiful instrument for beginner musicians",
+      "why": "Opens the world of music and creativity",
+      "price_hint_kzt": "20000-40000",
+      "tags": ["music", "creativity", "development"]
+    },
+    {
+      "title": "Weekend Trip",
+      "description": "Organized trip to an interesting place",
+      "why": "New impressions and memories",
+      "price_hint_kzt": "15000-30000",
+      "tags": ["travel", "impressions", "relaxation"]
+    },
+    {
+      "title": "Drawing Set",
+      "description": "Professional materials for artists",
+      "why": "Develops creative abilities",
+      "price_hint_kzt": "8000-18000",
+      "tags": ["creativity", "art", "development"]
+    },
+    {
+      "title": "E-reader",
+      "description": "Convenient device for reading favorite books",
+      "why": "Practical gift for book lovers",
+      "price_hint_kzt": "25000-40000",
+      "tags": ["technology", "reading", "education"]
+    },
+    {
+      "title": "Yoga Kit",
+      "description": "Mat and accessories for yoga practice",
+      "why": "Supports physical and mental health",
+      "price_hint_kzt": "5000-12000",
+      "tags": ["health", "sports", "meditation"]
+    },
+    {
+      "title": "Camera",
+      "description": "Quality camera for photography enthusiasts",
+      "why": "Helps capture important moments",
+      "price_hint_kzt": "30000-60000",
+      "tags": ["photography", "creativity", "memories"]
+    },
+    {
+      "title": "Gardening Set",
+      "description": "Tools and seeds for growing plants",
+      "why": "Brings joy from growing living things",
+      "price_hint_kzt": "3000-8000",
+      "tags": ["nature", "hobby", "plants"]
+    },
+    {
+      "title": "Learning Certificate",
+      "description": "Course on interesting topic or skill",
+      "why": "Investment in future and development",
+      "price_hint_kzt": "20000-50000",
+      "tags": ["education", "development", "skills"]
+    },
+    {
+      "title": "Crafting Kit",
+      "description": "Materials for knitting, embroidery or other crafts",
+      "why": "Develops fine motor skills and creativity",
+      "price_hint_kzt": "4000-10000",
+      "tags": ["creativity", "crafting", "hobby"]
+    },
+    {
+      "title": "Concert Tickets",
+      "description": "Tickets to favorite performer's show",
+      "why": "Unforgettable emotions and impressions",
+      "price_hint_kzt": "8000-25000",
+      "tags": ["music", "entertainment", "impressions"]
+    },
+    {
+      "title": "BBQ Set",
+      "description": "Quality tools for grilling",
+      "why": "Helps create delicious outdoor meals",
+      "price_hint_kzt": "15000-30000",
+      "tags": ["cooking", "relaxation", "nature"]
+    },
+    {
+      "title": "Clothing Store Certificate",
+      "description": "Opportunity to choose stylish clothes",
+      "why": "Helps update wardrobe",
+      "price_hint_kzt": "10000-25000",
+      "tags": ["style", "fashion", "appearance"]
+    },
+    {
+      "title": "Fishing Kit",
+      "description": "Professional gear for fishing enthusiasts",
+      "why": "Helps relax in nature",
+      "price_hint_kzt": "12000-25000",
+      "tags": ["sports", "nature", "relaxation"]
+    },
+    {
+      "title": "Smart Board",
+      "description": "Smart board for notes and planning",
+      "why": "Helps organize thoughts and tasks",
+      "price_hint_kzt": "35000-60000",
+      "tags": ["technology", "organization", "productivity"]
+    },
+    {
+      "title": "Picnic Set",
+      "description": "Beautiful dishes and accessories for outdoor recreation",
+      "why": "Creates cozy atmosphere for relaxation",
+      "price_hint_kzt": "8000-15000",
+      "tags": ["relaxation", "nature", "coziness"]
+    }
+  ]
+}
