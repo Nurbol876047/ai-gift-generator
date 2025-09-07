@@ -1,0 +1,108 @@
+{
+  "navigation": {
+    "home": "Home",
+    "admin": "Admin",
+    "login": "Login",
+    "logout": "Logout"
+  },
+  "common": {
+    "save": "Save",
+    "cancel": "Cancel",
+    "delete": "Delete",
+    "edit": "Edit",
+    "create": "Create",
+    "loading": "Loading...",
+    "error": "Error",
+    "success": "Success",
+    "search": "Search",
+    "filter": "Filter",
+    "export": "Export",
+    "view": "View",
+    "back": "Back"
+  },
+  "event": {
+    "title": "Event Title",
+    "description": "Description",
+    "date": "Date",
+    "location": "Location",
+    "maxGuests": "Max Guests",
+    "tableSize": "Table Size",
+    "createEvent": "Create Event",
+    "editEvent": "Edit Event",
+    "deleteEvent": "Delete Event",
+    "eventDetails": "Event Details",
+    "noEvents": "No events found",
+    "createFirstEvent": "Create your first event"
+  },
+  "rsvp": {
+    "title": "RSVP",
+    "name": "Name",
+    "email": "Email (Optional)",
+    "phone": "Phone (Optional)",
+    "status": "RSVP Status",
+    "mealChoice": "Meal Choice",
+    "yes": "Yes, I will attend",
+    "no": "No, I cannot attend",
+    "maybe": "Maybe",
+    "pending": "Pending",
+    "submit": "Submit RSVP",
+    "submitted": "RSVP submitted successfully!",
+    "required": "Name and RSVP status are required"
+  },
+  "admin": {
+    "dashboard": "Admin Dashboard",
+    "guests": "Guests",
+    "tables": "Tables",
+    "photos": "Photos",
+    "exportCsv": "Export to CSV",
+    "qrCode": "QR Code",
+    "guestList": "Guest List",
+    "totalGuests": "Total Guests",
+    "attending": "Attending",
+    "notAttending": "Not Attending",
+    "maybe": "Maybe",
+    "pending": "Pending",
+    "tableNumber": "Table Number",
+    "uploadPhoto": "Upload Photo",
+    "photoCaption": "Photo Caption"
+  },
+  "auth": {
+    "email": "Email",
+    "password": "Password",
+    "login": "Login",
+    "loginError": "Invalid credentials",
+    "welcome": "Welcome back!",
+    "signInToManage": "Sign in to manage your events"
+  },
+  "home": {
+    "title": "Toy Event Platform",
+    "subtitle": "Manage your toy events with ease - RSVP, guest management, and more",
+    "features": {
+      "title": "Features",
+      "guestManagement": {
+        "title": "Guest Management",
+        "description": "Manage RSVP and guest lists"
+      },
+      "autoTableAssignment": {
+        "title": "Auto Table Assignment",
+        "description": "Automatically assign guests to tables"
+      },
+      "qrCodeInvites": {
+        "title": "QR Code Invites",
+        "description": "Generate unique QR codes for each event"
+      },
+      "multiLanguage": {
+        "title": "Multi-language",
+        "description": "Available in English, Russian and Kazakh"
+      }
+    },
+    "currentEvents": "Current Events",
+    "viewEvents": "View Events",
+    "noEventsMessage": "No events at the moment"
+  }
+}
+
+
+
+
+

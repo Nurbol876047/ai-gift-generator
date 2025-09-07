@@ -1,250 +1,482 @@
-# AI Gift Generator 🎁
+# Toy Event Platform
 
-Полноценное веб-приложение для генерации идей подарков с использованием искусственного интеллекта. Интегрировано с Hugging Face Inference API (модель Mistral-7B-Instruct-v0.2) с офлайн-режимом в качестве резервного варианта.
+A full-stack web application for managing toy events built with Next.js 14, TypeScript, TailwindCSS, Prisma, PostgreSQL, and NextAuth.
 
-## ✨ Особенности
+## 🚀 Features
 
-- 🤖 **AI-генерация**: Интеграция с Hugging Face API для создания персонализированных идей подарков
-- 🌐 **Двуязычность**: Поддержка русского и английского языков
-- 🌙 **Темная тема**: Переключение между светлой и темной темами
-- 📱 **Адаптивный дизайн**: Красивый интерфейс для всех устройств
-- ⚡ **Офлайн режим**: Резервные идеи при недоступности AI
-- 🎨 **Современный UI**: Tailwind CSS + Framer Motion анимации
-- 🔒 **Безопасность**: Rate limiting и валидация данных
-- 📊 **Кеширование**: Оптимизация запросов к API
+- **Event Management**: Create and manage toy events with guest lists
+- **RSVP System**: Guests can RSVP with meal preferences
+- **QR Code Invites**: Generate unique QR codes for each event
+- **Automatic Table Assignment**: Auto-assign guests to tables (configurable table size)
+- **Photo Gallery**: Upload and view event photos
+- **Multi-language Support**: Available in English, Russian, and Kazakh
+- **Admin Dashboard**: Complete admin interface for event management
+- **CSV Export**: Export guest lists to CSV
+- **Authentication**: Secure admin login with NextAuth
+- **Responsive Design**: Mobile-friendly interface with TailwindCSS
 
-## 🛠 Технологии
+## 🛠 Tech Stack
 
-### Frontend
-- **React 18** - Основной фреймворк
-- **Vite** - Быстрый сборщик
-- **Tailwind CSS** - Стилизация
-- **Framer Motion** - Анимации
-- **jsPDF** - Генерация PDF
+- **Frontend**: Next.js 14 (App Router), React, TypeScript, TailwindCSS
+- **Backend**: Next.js API Routes, Node.js
+- **Database**: PostgreSQL with Prisma ORM
+- **Authentication**: NextAuth.js with credentials provider
+- **Internationalization**: next-intl
+- **Testing**: Jest, React Testing Library
+- **Deployment**: Docker, Docker Compose
+- **Validation**: Zod
 
-### Backend
-- **Node.js** - Серверная среда
-- **Express** - Веб-фреймворк
-- **Hugging Face API** - AI модель
-- **CORS** - Междоменные запросы
-- **Rate Limiting** - Защита от спама
+## 📁 Project Structure
 
-## 📸 Скриншоты
-
-### Главная страница
-![Главная страница](https://via.placeholder.com/800x400/0ea5e9/ffffff?text=AI+Gift+Generator+Interface)
-
-### Результаты генерации
-![Результаты](https://via.placeholder.com/800x400/10b981/ffffff?text=Generated+Gift+Ideas)
-
-### Темная тема
-![Темная тема](https://via.placeholder.com/800x400/6366f1/ffffff?text=Dark+Theme+Interface)
-
-## 🚀 Быстрый старт
-
-### Предварительные требования
-- Node.js 16+ 
-- npm или yarn
-- API ключ Hugging Face
-
-### 1. Клонирование репозитория
-```bash
-git clone <repository-url>
-cd ai-gift-generator
+```
+├── src/
+│   ├── app/                    # Next.js 14 App Router
+│   │   ├── api/               # API routes
+│   │   │   ├── auth/          # NextAuth configuration
+│   │   │   └── events/        # Event-related endpoints
+│   │   ├── [locale]/          # Internationalized pages
+│   │   │   ├── admin/         # Admin pages
+│   │   │   ├── event/         # Guest event pages
+│   │   │   └── page.tsx       # Home page
+│   │   ├── globals.css        # Global styles
+│   │   ├── layout.tsx         # Root layout
+│   │   └── providers.tsx      # Context providers
+│   ├── lib/                   # Utilities and configurations
+│   │   ├── prisma.ts         # Prisma client
+│   │   ├── auth.ts           # NextAuth configuration
+│   │   └── utils.ts          # Utility functions
+│   ├── messages/              # Translation files
+│   │   ├── en.json           # English translations
+│   │   ├── ru.json           # Russian translations
+│   │   └── kk.json           # Kazakh translations
+│   └── i18n/                  # Internationalization config
+├── prisma/                    # Database schema and migrations
+├── scripts/                   # Utility scripts
+├── __tests__/                 # Test files
+├── docker-compose.dev.yml     # Development Docker setup
+├── docker-compose.prod.yml    # Production Docker setup
+└── Dockerfile                 # Docker configuration
 ```
 
-### 2. Настройка Backend
+## 🚀 Quick Start
 
+### Prerequisites
+
+- Node.js 18+
+- Docker and Docker Compose (for containerized setup)
+- PostgreSQL (if running locally without Docker)
+
+### Option 1: Docker Setup (Recommended)
+
+1. **Clone the repository**
+   ```bash
+   git clone <repository-url>
+   cd toy-event-platform
+   ```
+
+2. **Start the application with Docker Compose**
+   ```bash
+   # Development
+   npm run docker:dev
+   
+   # Or manually
+   docker-compose -f docker-compose.dev.yml up -d
+   ```
+
+3. **Run database migrations**
+   ```bash
+   docker-compose -f docker-compose.dev.yml exec app npx prisma db push
+   ```
+
+4. **Create admin user**
+   ```bash
+   docker-compose -f docker-compose.dev.yml exec app npm run create-admin
+   ```
+
+5. **Access the application**
+   - Frontend: http://localhost:3000
+   - Database: localhost:5432
+
+### Option 2: Local Development (SQLite)
+
+1. **Install dependencies**
+   ```bash
+   npm install
+   ```
+
+2. **Set up environment variables**
+   ```bash
+   cp env.example .env.local
+   ```
+   The `.env.local` file is already configured for SQLite with `DATABASE_URL="file:./dev.db"`
+
+3. **Set up the database**
+   ```bash
+   # Run Prisma migrations to create SQLite database
+   npx prisma migrate dev --name init
+   
+   # Generate Prisma client
+   npm run db:generate
+   ```
+
+4. **Create admin user**
+   ```bash
+   npm run create-admin
+   ```
+
+5. **Start the development server**
+   ```bash
+   npm run dev
+   ```
+
+6. **Access the application**
+   - Frontend: http://localhost:3000
+
+## 📋 Available Scripts
+
+### Development
 ```bash
-# Переход в папку backend
-cd backend
-
-# Установка зависимостей
-npm install
-
-# Копирование файла окружения
-cp env.example .env
-
-# Редактирование .env файла
-# Добавьте ваш HF_API_KEY
+npm run dev          # Start development server
+npm run build        # Build for production
+npm run start        # Start production server
+npm run lint         # Run ESLint
 ```
 
-**Важно**: Получите API ключ на [Hugging Face](https://huggingface.co/settings/tokens) и добавьте его в `.env` файл:
+### Database
+```bash
+npm run db:generate  # Generate Prisma client
+npm run db:push      # Push schema to database
+npm run db:migrate   # Run database migrations
+npm run db:studio    # Open Prisma Studio
+npm run db:seed      # Seed database with sample data
+```
 
+### Testing
+```bash
+npm run test         # Run tests
+npm run test:watch   # Run tests in watch mode
+npm run test:coverage # Run tests with coverage
+```
+
+### Docker
+```bash
+npm run docker:dev   # Start development containers
+npm run docker:prod  # Start production containers
+npm run docker:down  # Stop all containers
+npm run docker:build # Build Docker images
+```
+
+### Utilities
+```bash
+npm run create-admin # Create admin user
+```
+
+## 🌐 API Endpoints
+
+### Events
+- `POST /api/events` - Create new event (admin only)
+- `GET /api/events` - Get all events or admin's events
+- `GET /api/events/[id]` - Get event details
+- `PUT /api/events/[id]` - Update event (admin only)
+- `DELETE /api/events/[id]` - Delete event (admin only)
+
+### RSVP
+- `POST /api/events/[id]/rsvp` - Submit RSVP
+
+### QR Codes
+- `GET /api/events/[id]/qr` - Get QR code for event
+
+### Export
+- `GET /api/events/[id]/export` - Export guest list to CSV (admin only)
+
+### Photos
+- `POST /api/events/[id]/photos` - Upload photo (admin only)
+- `GET /api/events/[id]/photos` - Get event photos
+
+## 🗄 Database Schema
+
+### Models
+
+#### Admin
+- `id`: String (Primary Key)
+- `email`: String (Unique)
+- `password`: String (Hashed)
+- `name`: String
+- `createdAt`: DateTime
+- `updatedAt`: DateTime
+
+#### Event
+- `id`: String (Primary Key)
+- `title`: String
+- `description`: String (Optional)
+- `date`: DateTime
+- `location`: String (Optional)
+- `maxGuests`: Int (Default: 100)
+- `tableSize`: Int (Default: 10)
+- `isActive`: Boolean (Default: true)
+- `adminId`: String (Foreign Key)
+- `createdAt`: DateTime
+- `updatedAt`: DateTime
+
+#### Guest
+- `id`: String (Primary Key)
+- `name`: String
+- `email`: String (Optional)
+- `phone`: String (Optional)
+- `rsvpStatus`: Enum (PENDING, YES, NO, MAYBE)
+- `mealChoice`: String (Optional)
+- `tableId`: String (Foreign Key, Optional)
+- `eventId`: String (Foreign Key)
+- `createdAt`: DateTime
+- `updatedAt`: DateTime
+
+#### Table
+- `id`: String (Primary Key)
+- `number`: Int
+- `capacity`: Int (Default: 10)
+- `eventId`: String (Foreign Key)
+- `createdAt`: DateTime
+- `updatedAt`: DateTime
+
+#### Photo
+- `id`: String (Primary Key)
+- `filename`: String
+- `url`: String
+- `caption`: String (Optional)
+- `eventId`: String (Foreign Key)
+- `createdAt`: DateTime
+
+## 🌍 Multi-language Support
+
+The application supports three languages:
+- **English** (en) - Default
+- **Russian** (ru) - Русский
+- **Kazakh** (kk) - Қазақ тілі
+
+Language can be switched using the language selector in the header.
+
+### Adding New Translations
+
+1. Add new keys to `src/messages/en.json`
+2. Add corresponding translations to `src/messages/ru.json` and `src/messages/kk.json`
+3. Use the `useTranslations()` hook in components
+
+## 🔐 Authentication
+
+Admin authentication is handled by NextAuth.js with credentials provider.
+
+### Default Demo Credentials
+- Email: `admin@example.com`
+- Password: `password123`
+
+### Creating New Admin Users
+
+```bash
+# Using npm script
+npm run create-admin
+
+# Using tsx directly
+npx tsx scripts/create-admin.ts admin@example.com password123 "Admin Name"
+```
+
+## 🧪 Testing
+
+### Running Tests
+```bash
+# Run all tests
+npm test
+
+# Run tests in watch mode
+npm run test:watch
+
+# Run tests with coverage
+npm run test:coverage
+```
+
+### Test Structure
+- Tests are located in `__tests__/` directory
+- API route tests use Jest with mocked Prisma client
+- Component tests use React Testing Library
+
+### Example Test
+```typescript
+// __tests__/api/events/[id]/rsvp.test.ts
+import { POST } from '@/app/api/events/[id]/rsvp/route'
+
+describe('/api/events/[id]/rsvp', () => {
+  it('should create a new guest RSVP successfully', async () => {
+    // Test implementation
+  })
+})
+```
+
+## 🐳 Docker Deployment
+
+### Development
+```bash
+# Start development environment
+docker-compose -f docker-compose.dev.yml up -d
+
+# View logs
+docker-compose -f docker-compose.dev.yml logs -f app
+
+# Stop environment
+docker-compose -f docker-compose.dev.yml down
+```
+
+### Production
+```bash
+# Set environment variables
+export POSTGRES_PASSWORD="secure-password"
+export NEXTAUTH_SECRET="your-secret-key"
+export NEXTAUTH_URL="https://your-domain.com"
+export NEXT_PUBLIC_APP_URL="https://your-domain.com"
+
+# Start production environment
+docker-compose -f docker-compose.prod.yml up -d
+```
+
+## 🔧 Environment Variables
+
+### Required Variables
 ```env
-HF_API_KEY=your_huggingface_key_here
-HF_MODEL=mistralai/Mistral-7B-Instruct-v0.2
-PORT=3001
-CACHE_TTL_SECONDS=120
+# Database
+DATABASE_URL="postgresql://postgres:password@localhost:5432/toy_event_platform?schema=public"
+
+# NextAuth
+NEXTAUTH_URL="http://localhost:3000"
+NEXTAUTH_SECRET="your-secret-key-here"
+
+# App Configuration
+NEXT_PUBLIC_APP_URL="http://localhost:3000"
 ```
 
-### 3. Запуск Backend
+### Production Variables
+```env
+# Production Database
+POSTGRES_PASSWORD="secure-password-change-in-production"
 
+# Production URLs
+NEXTAUTH_URL="https://your-domain.com"
+NEXT_PUBLIC_APP_URL="https://your-domain.com"
+```
+
+## 🚀 Deployment
+
+### Vercel (Recommended)
+1. Connect your GitHub repository to Vercel
+2. Set environment variables in Vercel dashboard
+3. Deploy automatically on push to main branch
+
+### Docker Production
 ```bash
-# Запуск в режиме разработки
-npm run dev
+# Build and run production containers
+docker-compose -f docker-compose.prod.yml up -d
 
-# Или в продакшн режиме
+# Scale application
+docker-compose -f docker-compose.prod.yml up -d --scale app=3
+```
+
+### Manual Deployment
+   ```bash
+# Build the application
+   npm run build
+
+# Start production server
 npm start
 ```
 
-Backend будет доступен на `http://localhost:3001`
+## 🔍 Troubleshooting
 
-### 4. Настройка Frontend
+### Common Issues
 
+#### Database Connection Error
+```
+Error: Can't reach database server
+```
+**Solution**: Ensure PostgreSQL is running and `DATABASE_URL` is correct.
+
+#### Prisma Client Not Generated
+```
+Error: @prisma/client did not initialize
+```
+**Solution**: Run `npm run db:generate`
+
+#### Port Already in Use
+```
+Error: Port 3000 is already in use
+```
+**Solution**: 
+- Kill process using port 3000: `lsof -ti:3000 | xargs kill -9`
+- Or change port in `package.json` scripts
+
+#### Docker Container Issues
 ```bash
-# Переход в папку frontend
-cd ../frontend
+# Check container status
+docker-compose ps
 
-# Установка зависимостей
-npm install
+# View logs
+docker-compose logs app
+docker-compose logs postgres
+
+# Restart containers
+docker-compose restart
 ```
 
-### 5. Запуск Frontend
+#### Environment Variables Not Loading
+**Solution**: Ensure `.env.local` is in the root directory and restart the development server.
 
+### Reset Everything
 ```bash
-# Запуск в режиме разработки
-npm run dev
+# Stop all containers and remove volumes
+docker-compose down -v
+
+# Remove all Docker data
+docker system prune -a
+
+# Start fresh
+docker-compose up -d
+docker-compose exec app npx prisma db push
 ```
 
-Frontend будет доступен на `http://localhost:5173`
+## 🤝 Contributing
 
-## 📁 Структура проекта
+1. Fork the repository
+2. Create a feature branch: `git checkout -b feature/new-feature`
+3. Make your changes
+4. Add tests for new functionality
+5. Run tests: `npm test`
+6. Commit your changes: `git commit -m 'Add new feature'`
+7. Push to the branch: `git push origin feature/new-feature`
+8. Submit a pull request
 
-```
-ai-gift-generator/
-├── backend/
-│   ├── index.js              # Основной сервер
-│   ├── package.json          # Зависимости backend
-│   ├── .env                  # Переменные окружения
-│   ├── .eslintrc.js          # ESLint конфигурация
-│   └── offline/
-│       └── ideas.json        # Офлайн идеи подарков
-├── frontend/
-│   ├── src/
-│   │   ├── App.jsx           # Основной компонент
-│   │   ├── main.jsx          # Точка входа
-│   │   ├── i18n.js           # Интернационализация
-│   │   └── index.css         # Стили
-│   ├── package.json          # Зависимости frontend
-│   ├── vite.config.js        # Конфигурация Vite
-│   ├── tailwind.config.js    # Конфигурация Tailwind
-│   └── .eslintrc.cjs         # ESLint конфигурация
-└── README.md                 # Документация
-```
+## 📝 License
 
-## 🔧 API Endpoints
+This project is licensed under the MIT License - see the LICENSE file for details.
 
-### Backend API (порт 3001)
+## 🆘 Support
 
-- `GET /api/health` - Проверка состояния сервера
-- `POST /api/generate` - Генерация идей через AI
-- `GET /api/offline` - Получение офлайн идей
+For support and questions:
+1. Check the troubleshooting section above
+2. Review the logs: `docker-compose logs app`
+3. Open an issue in the repository
+4. Check the documentation
 
-### Пример запроса к API
+## 🎯 Roadmap
 
-```bash
-curl -X POST http://localhost:3001/api/generate \
-  -H "Content-Type: application/json" \
-  -d '{
-    "age": 25,
-    "gender": "Female",
-    "occasion": "Birthday",
-    "budget": 15000,
-    "interests": "музыка, спорт",
-    "lang": "ru"
-  }'
-```
-
-## 🎯 Как это работает
-
-### 1. Генерация идей
-- Пользователь заполняет форму с параметрами
-- Запрос отправляется на Hugging Face API
-- AI модель генерирует персонализированные идеи
-- Результаты кешируются для оптимизации
-
-### 2. Офлайн режим
-- При недоступности AI или ошибках
-- Система автоматически переключается на офлайн режим
-- Используются предустановленные идеи из `ideas.json`
-- Пользователь получает мгновенный результат
-
-### 3. Интернационализация
-- Поддержка русского и английского языков
-- Автоматическое переключение интерфейса
-- Локализованные промпты для AI
-
-## 🔒 Безопасность
-
-- **Rate Limiting**: Ограничение 1 запрос в 5 секунд
-- **Валидация данных**: Проверка всех входных параметров
-- **CORS**: Настроен только для localhost
-- **Переменные окружения**: API ключи не коммитятся в репозиторий
-
-## 🎨 Кастомизация
-
-### Добавление новых языков
-1. Добавьте переводы в `frontend/src/i18n.js`
-2. Обновите логику переключения в `App.jsx`
-
-### Изменение AI модели
-1. Обновите `HF_MODEL` в `.env`
-2. При необходимости измените промпт в `backend/index.js`
-
-### Добавление офлайн идей
-1. Отредактируйте `backend/offline/ideas.json`
-2. Добавьте новые идеи в соответствующие языковые секции
-
-## 🐛 Устранение неполадок
-
-### Backend не запускается
-```bash
-# Проверьте порт 3001
-lsof -i :3001
-
-# Проверьте переменные окружения
-cat backend/.env
-```
-
-### Frontend не подключается к Backend
-```bash
-# Проверьте CORS настройки
-# Убедитесь что backend запущен на порту 3001
-```
-
-### AI не генерирует идеи
-```bash
-# Проверьте API ключ Hugging Face
-# Проверьте логи backend
-# Попробуйте офлайн режим
-```
-
-## 📝 Лицензия
-
-MIT License - см. файл LICENSE для деталей.
-
-## 🙏 Благодарности
-
-- [Hugging Face](https://huggingface.co/) за предоставление AI моделей
-- [Mistral AI](https://mistral.ai/) за модель Mistral-7B-Instruct-v0.2
-- [Tailwind CSS](https://tailwindcss.com/) за прекрасную систему стилей
-- [Framer Motion](https://www.framer.com/motion/) за анимации
-
-## 🤝 Вклад в проект
-
-1. Форкните репозиторий
-2. Создайте ветку для новой функции
-3. Внесите изменения
-4. Создайте Pull Request
-
-## 📞 Поддержка
-
-Если у вас есть вопросы или проблемы:
-- Создайте Issue в репозитории
-- Опишите проблему подробно
-- Приложите логи ошибок
+- [ ] Email notifications for RSVP
+- [ ] Real-time updates with WebSockets
+- [ ] Mobile app with React Native
+- [ ] Advanced analytics dashboard
+- [ ] Integration with payment systems
+- [ ] Social media sharing
+- [ ] Event templates
+- [ ] Bulk guest import
+- [ ] Advanced reporting
+- [ ] API rate limiting
+- [ ] Caching with Redis
+- [ ] CDN integration for photos
 
 ---
 
-**AI Gift Generator** - находите идеальные подарки с помощью искусственного интеллекта! 🎁✨
+**Built with ❤️ using Next.js 14, TypeScript, and modern web technologies.**
